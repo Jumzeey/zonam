@@ -1,0 +1,18 @@
+
+Hope you enjoy your new logo, here are the people that
+made your beautiful logo happen :)
+font name: Aladin-Regular
+font link: https://fonts.google.com/specimen/Aladin
+font author: Sudtipos
+font author site: https://www.sudtipos.com/
+Slogan Font: SpaceMono-Regular.ttf
+
+icon designer: P.J. Onori
+icon designer link: /somerandomdude
+        
+
+fontColor: {"gradient-0":"#338EF4","gradient-1":"#1064C3"}
+bgColor: {"hex":"#FFFFFF"}
+iconColor: {"gradient-0":"#338EF4","gradient-1":"#1064C3"}
+sloganColor: {"hex":"#FFFFFF"}
+      

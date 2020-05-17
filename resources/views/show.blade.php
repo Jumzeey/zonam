@@ -86,8 +86,8 @@
 
 
 
-<div>
-<h2 class="text-4xl font-semibold text-center">Similar Movies</h2>
-@include('partials.carousel')
+<div id='app'>
+    <h2 class="text-4xl font-semibold text-center">Similar Movies</h2>
+    <slider-component></slider-component>
 </div><!--recommended ends-->
 @endsection
