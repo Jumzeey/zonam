@@ -12,7 +12,6 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
 Route::get('/','moviesController@index')->name('movies.index');
 Route::get('/movies/{movie}','moviesController@show')->name('movies.show');
 
@@ -23,4 +22,4 @@ Route::get('/movies/{movie}','moviesController@show')->name('movies.show');
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+

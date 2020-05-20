@@ -37722,7 +37722,7 @@ var render = function() {
               {
                 staticClass:
                   "block hover:bg-grey-700 px-3 py-3 flex items-center",
-                attrs: { href: "#" }
+                attrs: { href: "/movie-app/public/movies/" + result.id }
               },
               [
                 _c("img", {
