@@ -46,7 +46,7 @@
                     </div>
                 </li>
                 <li class="md:ml-6">
-                    <a href="#" class="hover:text-gray-300 mt-3 md:mt-0">
+                    <a href="{{route('tv.index')}}" class="hover:text-gray-300 mt-3 md:mt-0">
                         Tv Shows
                     </a>
                 </li>
