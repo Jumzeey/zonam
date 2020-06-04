@@ -14,15 +14,18 @@
         />
       </svg>
     </div>
-    <div class="search-list absolute bg-red-800 rounded mt-3">
+    <div class="search-list absolute bg-gray-800 rounded mt-3">
       <div
         v-show="query && apiLoaded"
         @click="selectItem(result)"
-        class="border-b border-grey-700 dropdown-item bg-red-800"
-        v-for="result in results"
+        class="border-b border-gray-700 dropdown-item bg-gray-800"
+        v-for="result in results.slice(0, 10)"
         :key="result.id"
       >
-        <a :href=" '/movie-app/public/movies/'+ result.id" class="block hover:bg-grey-700 px-3 py-3 flex items-center">
+        <a
+          :href=" '/../movies/'+ result.id"
+          class="block hover:bg-gray-700 px-3 py-3 flex items-center"
+        >
           <img v-bind:src="'http://image.tmdb.org/t/p/w92/' +    result.poster_path" class="w-8" />
           <span class="ml-4">{{result.title}}</span>
         </a>

@@ -20,7 +20,9 @@ window.Vue = require('vue');
 // const files = require.context('./', true, /\.vue$/i)
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
-Vue.component('slider-component', require('./components/SliderComponent.vue').default);
+
+
+
 Vue.component('searchbar-component', require('./components/SearchbarComponent.vue').default);
 
 /**
@@ -32,3 +34,6 @@ Vue.component('searchbar-component', require('./components/SearchbarComponent.vu
 const app = new Vue({
     el: '#app',
 });
+
+
+

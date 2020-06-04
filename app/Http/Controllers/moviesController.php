@@ -21,7 +21,13 @@ class moviesController extends Controller
          $popularMovies= Http::get('https://api.themoviedb.org/3/movie/popular?api_key=af01ac3e86bae1ffd464d0687ad2fb8a')
         ->json()['results'];
 
-         $nowPlaying= Http::get('https://api.themoviedb.org/3/movie/now_playing?api_key=af01ac3e86bae1ffd464d0687ad2fb8a')
+         $nowPlaying= Http::get('https://api.themoviedb.org/3/movie/now_playing?api_key=af01ac3e86bae1ffd464d0687ad2fb8a&page=2')
+        ->json()['results'];
+
+         $topRated= Http::get('https://api.themoviedb.org/3/movie/top_rated?api_key=af01ac3e86bae1ffd464d0687ad2fb8a&page=1')
+        ->json()['results'];
+
+         $upComing= Http::get('https://api.themoviedb.org/3/movie/upcoming?api_key=af01ac3e86bae1ffd464d0687ad2fb8a&language=en-US&page=1')
         ->json()['results'];
 
         $genreArray= Http::get('https://api.themoviedb.org/3/genre/movie/list?api_key=af01ac3e86bae1ffd464d0687ad2fb8a')
@@ -35,6 +41,8 @@ class moviesController extends Controller
         return view('index', [
             'popularMovies'=>$popularMovies,
             'nowPlaying'=>$nowPlaying,
+            'topRated'=>$topRated,
+            'upComing'=>$upComing,
             'genres'=>$genre,
         ]);
     }
