@@ -66,8 +66,6 @@ class TvController extends Controller
          $tv= Http::get('https://api.themoviedb.org/3/tv/'.$id.'?api_key=af01ac3e86bae1ffd464d0687ad2fb8a&language=en-US&append_to_response=credits,videos,recommendations,similar,reviews')
         ->json();
 
-        //dump($movie);
-
         return view('tvshow', [
             'tv' => $tv,
         ]);

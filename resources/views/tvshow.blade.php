@@ -76,14 +76,11 @@
                                 </div>
                         </div>
                     @endif
-
-
                 </div>
-
-                   </div>
+            </div>
         </div>
     </div>
-</div><!-- end movie-info-->
+</div><!-- end tv-info-->
 
 <div class="tv-cast border-b border-gray-800">
     <div class="container mx-auto px-4 py-16">
@@ -93,15 +90,15 @@
                 @if ($loop->index <10)
                     <div class="mt-8">
                         <div>
-                                <img src="{{asset('https://image.tmdb.org/t/p/w300/' . $cast['profile_path'])}}" alt="cast" class="hover:opacity-75 transition ease-in-out duration-150">
+                              <a href="{{route('actor.show', $cast['id'])}}" >  <img src="{{asset('https://image.tmdb.org/t/p/w300/' . $cast['profile_path'])}}" alt="cast" class="hover:opacity-75 transition ease-in-out duration-150"></a>
                         </div>
                         <div class="mt-2">
-                            <a href="#" class="text-lg mt-2 hover:text-gray:300">{{$cast['name']}}</a>
+                            <a href="{{route('actor.show', $cast['id'])}}" class="text-lg mt-2 hover:text-gray:300">{{$cast['name']}}</a>
                             <div class="text-sm text-gray-400">
                                 {{$cast['character']}}
                             </div>
                         </div>
-                </div>
+                    </div>
                 @endif
             @endforeach
         </div>

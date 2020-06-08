@@ -79,11 +79,8 @@
                                 </div>
                         </div>
                     @endif
-
-
                 </div>
-
-                   </div>
+            </div>
         </div>
     </div>
 </div><!-- end movie-info-->
@@ -94,17 +91,31 @@
         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
             @foreach ($movie['credits']['cast'] as $cast )
                 @if ($loop->index <10)
-                    <div class="mt-8">
-                        <div>
-                                <img src="{{asset('https://image.tmdb.org/t/p/w300/' . $cast['profile_path'])}}" alt="cast" class="hover:opacity-75 transition ease-in-out duration-150">
-                        </div>
-                        <div class="mt-2">
-                            <a href="#" class="text-lg mt-2 hover:text-gray:300">{{$cast['name']}}</a>
-                            <div class="text-sm text-gray-400">
-                                {{$cast['character']}}
+                    @if ($cast['profile_path'] !== null)
+                        <div class="mt-8">
+                            <div>
+                                    <a href="{{route('actor.show', $cast['id'])}}"> <img src="{{asset('https://image.tmdb.org/t/p/w300/' . $cast['profile_path'])}}" alt="cast" class="hover:opacity-75 transition ease-in-out duration-150"></a>
+                            </div>
+                            <div class="mt-2">
+                                <a href="{{route('actor.show', $cast['id'])}}" class="text-lg mt-2 hover:text-gray:300">{{$cast['name']}}</a>
+                                <div class="text-sm text-gray-400">
+                                    {{$cast['character']}}
+                                </div>
                             </div>
                         </div>
-                </div>
+                        @else
+                        <div class="mt-8">
+                            <div>
+                                <a href="{{route('actor.show', $cast['id'])}}"> <img src="{{asset('https://ui-avatars.com/api/?size=500&name='.$cast['name'])}}" alt="cast" class="hover:opacity-75 transition ease-in-out duration-150"></a>
+                            </div>
+                            <div class="mt-2">
+                                <a href="{{route('actor.show', $cast['id'])}}" class="text-lg mt-2 hover:text-gray:300">{{$cast['name']}}</a>
+                                <div class="text-sm text-gray-400">
+                                    {{$cast['character']}}
+                                </div>
+                            </div>
+                        </div>
+                    @endif
                 @endif
             @endforeach
         </div>

@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Movie app</title>
+        <title>Zonam</title>
 
         <!-- stylesheets -->
         <link rel="stylesheet" href="{{asset('css/main.css')}}">
@@ -19,7 +19,7 @@
             <ul class="flex flex-col md:flex-row items-center">
                 <li>
                 <a href="{{route('movies.index')}}">
-                    Logo
+                   Zonam
                 </a>
                 </li>
                 <li class="md:ml-16">
@@ -51,7 +51,7 @@
                     </a>
                 </li>
                 <li class="md:ml-6">
-                    <a href="#" class="hover:text-gray-300 mt-3 md:mt-0">
+                    <a href="{{route('actors.index')}}" class="hover:text-gray-300 mt-3 md:mt-0">
                         Actors
                     </a>
                 </li>
@@ -59,12 +59,12 @@
          <!--the search bar-->
         <div class="flex flex-col md:flex-row items-center">
              <searchbar-component></searchbar-component>
-                 <!--the profile-->
+                 {{-- <!--the profile-->
                     <div class="md:ml-4 mt-3 md:mt-0">
                         <a href="#">
                         <img src="{{asset('/img/avatar.jpg')}}" alt="avatar" class="rounded-full w-8 h-8">
                         </a>
-                    </div>
+                    </div> --}}
         </div>
       </div>
     </nav>

@@ -5,8 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
 
-
-class moviesController extends Controller
+class ActorsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,32 +14,28 @@ class moviesController extends Controller
      */
     public function index()
     {
-         $popularMovies= Http::get('https://api.themoviedb.org/3/movie/popular?api_key=af01ac3e86bae1ffd464d0687ad2fb8a')
+        $actors1= Http::get('https://api.themoviedb.org/3/person/popular?api_key=af01ac3e86bae1ffd464d0687ad2fb8a&page=1')
+        ->json()['results'];
+        $actors2= Http::get('https://api.themoviedb.org/3/person/popular?api_key=af01ac3e86bae1ffd464d0687ad2fb8a&page=2')
+        ->json()['results'];
+        $actors3= Http::get('https://api.themoviedb.org/3/person/popular?api_key=af01ac3e86bae1ffd464d0687ad2fb8a&page=3')
+        ->json()['results'];
+        $actors4= Http::get('https://api.themoviedb.org/3/person/popular?api_key=af01ac3e86bae1ffd464d0687ad2fb8a&page=4')
+        ->json()['results'];
+        $actors5= Http::get('https://api.themoviedb.org/3/person/popular?api_key=af01ac3e86bae1ffd464d0687ad2fb8a&page=5')
+        ->json()['results'];
+        $actors6= Http::get('https://api.themoviedb.org/3/person/popular?api_key=af01ac3e86bae1ffd464d0687ad2fb8a&page=6')
         ->json()['results'];
 
-         $nowPlaying= Http::get('https://api.themoviedb.org/3/movie/now_playing?api_key=af01ac3e86bae1ffd464d0687ad2fb8a&page=2')
-        ->json()['results'];
+      
 
-         $topRated= Http::get('https://api.themoviedb.org/3/movie/top_rated?api_key=af01ac3e86bae1ffd464d0687ad2fb8a&page=1')
-        ->json()['results'];
-
-         $upComing= Http::get('https://api.themoviedb.org/3/movie/upcoming?api_key=af01ac3e86bae1ffd464d0687ad2fb8a&language=en-US&page=1')
-        ->json()['results'];
-
-        $genreArray= Http::get('https://api.themoviedb.org/3/genre/movie/list?api_key=af01ac3e86bae1ffd464d0687ad2fb8a')
-        ->json()['genres'];
-
-        $genre = collect($genreArray)->mapWithKeys(function ($genre){
-            return [$genre{'id'}=>$genre{'name'}];
-        });
-
-        
-        return view('index', [
-            'popularMovies'=>$popularMovies,
-            'nowPlaying'=>$nowPlaying,
-            'topRated'=>$topRated,
-            'upComing'=>$upComing,
-            'genres'=>$genre,
+        return view('actors',  [
+            'actors1'=>$actors1,
+            'actors2'=>$actors2,
+            'actors3'=>$actors3,
+            'actors4'=>$actors4,
+            'actors5'=>$actors5,
+            'actors6'=>$actors6,
         ]);
     }
 
@@ -73,11 +68,11 @@ class moviesController extends Controller
      */
     public function show($id)
     {
-          $movie= Http::get('https://api.themoviedb.org/3/movie/'.$id.'?api_key=af01ac3e86bae1ffd464d0687ad2fb8a&language=en-US&append_to_response=credits,videos,recommendations,similar,reviews')
+        $actors= Http::get('https://api.themoviedb.org/3/person/'.$id.'?api_key=af01ac3e86bae1ffd464d0687ad2fb8a&language=en-US&append_to_response=credits,external_ids')
         ->json();
 
-        return view('show', [
-            'movie' => $movie,
+        return view('actor', [
+            'actors' => $actors,
         ]);
     }
 
