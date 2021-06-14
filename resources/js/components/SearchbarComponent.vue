@@ -23,7 +23,7 @@
         :key="result.id"
       >
         <a
-          :href=" '/../movies/'+ result.id"
+          :href="URL('/movies/')+ result.id"
           class="block hover:bg-gray-700 px-3 py-3 flex items-center"
         >
           <img v-bind:src="'http://image.tmdb.org/t/p/w92/' +    result.poster_path" class="w-8" />

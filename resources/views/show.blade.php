@@ -7,7 +7,7 @@
             <img src="{{asset('https://image.tmdb.org/t/p/w500/' . $movie['poster_path'])}}" alt="poster" class="lg:w-64">
         </div>
         <div class="md:ml-24">
-                <h2 class="text-4xl font-semibold">
+                <h2 class="text-4xl font-semibold text-orange-500">
                     {{$movie['title']}}
                 </h2>
                 <div class="flex flex-wrap items-center text-grey-400 text-sm">
@@ -33,7 +33,7 @@
                  </p>
                 </div>
                 <div class="mt-12">
-                    <h4 class="font-semibold text-white">
+                    <h4 class="font-semibold text-white text-orange-500">
                         Featured cast
                     </h4>
                     <div class="flex m-4">
@@ -121,4 +121,7 @@
         </div>
     </div>
 </div><!-- end cast-->
+
+<!-- similar movie-->
+
 @endsection

@@ -9,8 +9,9 @@
         <!-- stylesheets -->
         <link rel="stylesheet" href="{{asset('css/main.css')}}">
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
-        <!--scripts-->
-        <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+        <link rel="stylesheet" type="text/css" href="css/slick.css">
+	    <link rel="stylesheet" type="text/css" href="css/slick-theme.css">
+       
     </head>
     <body class="font-sans bg-gray-900 text-white">
 <div id='app'>
@@ -72,5 +73,11 @@
       @yield('content')
 </div>
       <script src="{{asset('js/app.js')}}"></script>
+      <!--external scripts-->
+       <!--scripts-->
+        <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+        <script  src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+        <script  src="js/slick.min.js"></script>
+        <script  src="js/index.js"></script>
     </body>
 </html>

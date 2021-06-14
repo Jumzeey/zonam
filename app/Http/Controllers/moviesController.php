@@ -18,6 +18,8 @@ class moviesController extends Controller
          $popularMovies= Http::get('https://api.themoviedb.org/3/movie/popular?api_key=af01ac3e86bae1ffd464d0687ad2fb8a')
         ->json()['results'];
 
+        // dump($popularMovies);
+
          $nowPlaying= Http::get('https://api.themoviedb.org/3/movie/now_playing?api_key=af01ac3e86bae1ffd464d0687ad2fb8a&page=2')
         ->json()['results'];
 
@@ -31,7 +33,7 @@ class moviesController extends Controller
         ->json()['genres'];
 
         $genre = collect($genreArray)->mapWithKeys(function ($genre){
-            return [$genre{'id'}=>$genre{'name'}];
+            return [$genre['id']=>$genre['name']];
         });
 
         
