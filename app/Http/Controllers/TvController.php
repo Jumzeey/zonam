@@ -24,7 +24,7 @@ class TvController extends Controller
         ->json()['genres'];
 
         $genre = collect($genreArray)->mapWithKeys(function ($genre){
-            return [$genre{'id'}=>$genre{'name'}];
+            return [$genre['id']=>$genre['name']];
         });
 
         return view('tvseries', [
