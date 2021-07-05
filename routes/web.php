@@ -12,6 +12,10 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+//for heroku https setup
+if (App::environment('production')) {
+    URL::forceScheme('https');
+}
 //for movies
 Route::get('/','moviesController@index')->name('movies.index');
 Route::get('/movies/{movies}','moviesController@show')->name('movies.show');
