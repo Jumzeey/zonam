@@ -24,7 +24,7 @@
       >
         <a
           :href="URL('/movies/')+ result.id"
-          class="block hover:bg-gray-700 px-3 py-3 flex items-center"
+          class=" hover:bg-gray-700 px-3 py-3 flex items-center"
         >
           <img v-bind:src="'http://image.tmdb.org/t/p/w92/' +    result.poster_path" class="w-8" />
           <span class="ml-4">{{result.title}}</span>
